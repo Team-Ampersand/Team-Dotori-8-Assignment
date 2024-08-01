@@ -4,13 +4,13 @@ import Img from "./img.jsx";
 
 const Wrapper = styled.div`
   @media (max-width: 1280px) {
-    padding: 2rem;
+    padding-top: 2rem;
   }
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 0;
+  padding-top: 3rem;
 `;
 
 const Container = styled.div`
