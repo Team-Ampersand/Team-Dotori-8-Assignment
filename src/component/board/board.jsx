@@ -4,8 +4,12 @@ import Img from "./img.jsx";
 
 const Wrapper = styled.div`
   @media (max-width: 1280px) {
+    @media (max-width: 620px) {
+      padding-top: 0;
+    }
     padding-top: 2rem;
   }
+
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -14,19 +18,20 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  @media (max-width: 620px) {
-    width: 87.5vw;
-    height: 9.5rem;
-  }
   @media (max-width: 1280px) {
+    @media (max-width: 620px) {
+      width: 85vw;
+      height: 10rem;
+    }
     width: calc(75vw + 1.5rem);
     height: 13.75rem;
   }
   background: linear-gradient(275deg, #ffe870 -8.75%, #e23c96 100%);
   border-radius: 1.25rem;
-  width: 71rem;
-  height: 18.75rem;
+  width: 60rem;
+  height: 17rem;
   display: flex;
+  position: relative;
 `;
 
 export default function Board() {

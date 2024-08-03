@@ -14,9 +14,9 @@ const Wrapper = styled.header`
     border: none;
   }
   top: 0;
-  height: 7.25rem;
+  height: 5.75rem;
   display: flex;
-  width: 100vw;
+  width: 99.9vw;
   justify-content: center;
   background-color: #ffffff;
   border: 0.0625rem solid rgba(153, 153, 153, 0.5);
@@ -29,7 +29,7 @@ const Container = styled.div`
   @media (max-width: 620px) {
     width: 85vw;
   }
-  width: 71.85rem;
+  width: 60rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

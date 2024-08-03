@@ -18,8 +18,8 @@ const Container = styled.div`
     display: none;
   }
   background: #ededed;
-  width: 22.5rem;
-  height: 2.25rem;
+  width: 16rem;
+  height: 1.8rem;
   border-radius: 3.125rem;
   gap: 0.5rem;
   display: flex;

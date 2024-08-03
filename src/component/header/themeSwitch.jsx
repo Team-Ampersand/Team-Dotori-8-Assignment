@@ -9,8 +9,8 @@ const Container = styled.div`
     width: 4.125rem;
     height: 2rem;
   }
-  width: 4.6875rem;
-  height: 2.25rem;
+  width: 3.5rem;
+  height: 1.8rem;
   border-radius: 3.125rem;
   display: flex;
   align-items: center;
@@ -20,5 +20,5 @@ const Container = styled.div`
 `;
 
 export default function ThemeSwitch() {
-  return <Container></Container>;
+  return <Container />;
 }

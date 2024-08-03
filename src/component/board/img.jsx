@@ -5,12 +5,15 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   position: relative;
+  & > img {
+    left: 0;
+  }
 `;
 
 export default function Img() {
   return (
     <Container>
-      <img alt="Rocket" src="../../assets/Rocket.png" />
+      <img alt="Rocket" src="../../../src/assets/Rocket.png" />
     </Container>
   );
 }

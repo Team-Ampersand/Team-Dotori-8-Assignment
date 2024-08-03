@@ -3,16 +3,22 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   align-items: center;
+  & > svg {
+    @media (max-width: 620px) {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+  }
 `;
 
 const Title = styled.h2`
   @media (max-width: 620px) {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   @media (max-width: 1280px) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 500;
 `;
 
