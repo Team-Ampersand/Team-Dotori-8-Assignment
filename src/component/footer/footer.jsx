@@ -12,8 +12,11 @@ const Wrapper = styled.footer`
   justify-content: center;
   margin-top: 6rem;
   width: 100vw;
-  height: 5rem;
+  height: 4rem;
   background-color: #e3e3e3;
+  p {
+    font-size: 0.9rem;
+  }
 `;
 
 function Footer() {
