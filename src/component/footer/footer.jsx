@@ -5,7 +5,6 @@ const Wrapper = styled.footer`
   @media (max-width: 1260px) {
     display: none;
   }
-  position: absolute;
   bottom: 0;
   display: flex;
   align-items: center;
@@ -14,6 +13,8 @@ const Wrapper = styled.footer`
   width: 100vw;
   height: 4rem;
   background-color: #e3e3e3;
+  position: relative;
+  transform: translateY(-100%);
   p {
     font-size: 0.9rem;
   }
