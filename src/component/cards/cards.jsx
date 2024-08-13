@@ -43,7 +43,7 @@ const Button = styled.button`
 function Cards() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const cards = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />];
+  const cards = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />];
   const totalCards = cards.length;
   const cardsPerPage = 3;
   const totalWidth = (totalCards / cardsPerPage) * 100;
