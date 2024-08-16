@@ -4,7 +4,7 @@ import Search from "./search.jsx";
 import ThemeSwitch from "./themeSwitch.jsx";
 import styled from "styled-components";
 
-const Wrapper = styled.header`
+const HeaderWrapper = styled.header`
   @media (max-width: 1280px) {
     height: 5.5rem;
   }
@@ -22,7 +22,7 @@ const Wrapper = styled.header`
   border: 0.0625rem solid rgba(153, 153, 153, 0.5);
 `;
 
-const Container = styled.div`
+const HeaderContainer = styled.div`
   @media (max-width: 1280px) {
     width: calc(75vw + 1.75rem);
   }
@@ -37,13 +37,13 @@ const Container = styled.div`
 
 function Header() {
   return (
-    <Wrapper>
-      <Container>
+    <HeaderWrapper>
+      <HeaderContainer>
         <Logo />
         <Search />
         <ThemeSwitch />
-      </Container>
-    </Wrapper>
+      </HeaderContainer>
+    </HeaderWrapper>
   );
 }
 

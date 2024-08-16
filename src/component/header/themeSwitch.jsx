@@ -19,6 +19,8 @@ const Container = styled.div`
   background-color: #e3e3e3;
 `;
 
-export default function ThemeSwitch() {
+function ThemeSwitch() {
   return <Container />;
 }
+
+export default ThemeSwitch;

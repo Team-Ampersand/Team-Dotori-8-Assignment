@@ -25,6 +25,12 @@ const CardWrapper = styled.div`
   transition: transform 0.5s ease-in-out;
   transform: ${(props) => `translateX(-${props.translate}%)`};
   width: ${(props) => props.totalWidth}%;
+  div {
+    flex: "0 0 11.2%";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Button = styled.button`
@@ -64,7 +70,7 @@ function Cards() {
     <Container>
       <CardWrapper translate={(100 / cardsPerPage) * currentIndex} totalWidth={totalWidth}>
         {cards.map((card, index) => (
-          <div style={{ flex: "0 0 17%" }} key={index}>
+          <div style={{ flex: "0 0 11.2%" }} key={index}>
             {card}
           </div>
         ))}

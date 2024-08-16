@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   & > svg {
@@ -24,7 +24,7 @@ const Title = styled.h2`
 
 export default function Logo() {
   return (
-    <Container>
+    <LogoContainer>
       <svg xmlns="http://www.w3.org/2000/svg" width="2.75rem" height="2.75rem" viewBox="0 0 44 44" fill="none">
         <path
           fill-rule="evenodd"
@@ -47,6 +47,6 @@ export default function Logo() {
         </defs>
       </svg>
       <Title>EveryGSM</Title>
-    </Container>
+    </LogoContainer>
   );
 }
