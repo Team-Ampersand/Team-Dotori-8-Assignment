@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Card from "../cards/card";
 
@@ -21,16 +21,11 @@ const Container = styled.div`
 `;
 
 const CardWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: ${(props) => (props.isMobile ? "repeat(2, 1fr)" : "repeat(3, 1fr)")};
+  gap: 10px;
+  justify-items: center;
   transition: transform 0.5s ease-in-out;
-  transform: ${(props) => `translateX(-${props.translate}%)`};
-  width: ${(props) => props.totalWidth}%;
-  div {
-    flex: "0 0 11.2%";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 `;
 
 const Button = styled.button`
@@ -44,41 +39,49 @@ const Button = styled.button`
   cursor: pointer;
   z-index: 1;
   ${(props) => (props.left ? "left: 0;" : "right: 0;")}
+  ${(props) => (props.disabled ? "opacity: 0.5; cursor: not-allowed;" : "")}
 `;
 
 function Cards() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 620);
 
   const cards = [<Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />, <Card />];
   const totalCards = cards.length;
-  const cardsPerPage = 3;
-  const totalWidth = (totalCards / cardsPerPage) * 100;
+  const cardsPerPage = isMobile ? 4 : 3;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1280);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const nextSlide = () => {
-    if (currentIndex < totalCards - cardsPerPage) {
-      setCurrentIndex(currentIndex + 1);
+    if (currentIndex + cardsPerPage < totalCards) {
+      setCurrentIndex(currentIndex + cardsPerPage);
     }
   };
 
   const prevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+      setCurrentIndex(currentIndex - cardsPerPage);
     }
   };
 
   return (
     <Container>
-      <CardWrapper translate={(100 / cardsPerPage) * currentIndex} totalWidth={totalWidth}>
-        {cards.map((card, index) => (
-          <div style={{ flex: "0 0 11.2%" }} key={index}>
-            {card}
-          </div>
+      <CardWrapper isMobile={isMobile}>
+        {cards.slice(currentIndex, currentIndex + cardsPerPage).map((card, index) => (
+          <div key={index}>{card}</div>
         ))}
       </CardWrapper>
-      <Button left onClick={prevSlide}>
+      <Button left onClick={prevSlide} disabled={currentIndex === 0}>
         &lt;
       </Button>
-      <Button right onClick={nextSlide}>
+      <Button right onClick={nextSlide} disabled={currentIndex + cardsPerPage >= totalCards}>
         &gt;
       </Button>
     </Container>
