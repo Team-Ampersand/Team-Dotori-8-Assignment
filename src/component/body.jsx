@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   height: auto;
   min-height: 100%;
   padding-bottom: 4rem;
+  height: 100vh;
 `;
 
 export default function Body() {

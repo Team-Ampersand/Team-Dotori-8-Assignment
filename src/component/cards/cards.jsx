@@ -16,7 +16,7 @@ const Container = styled.div`
       height: 10rem;
     }
     width: calc(75vw + 1.5rem);
-    height: 13.75rem;
+    height: 35rem;
   }
 `;
 
