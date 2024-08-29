@@ -16,7 +16,7 @@ const Container = styled.div`
       height: 10rem;
     }
     width: calc(75vw + 1.5rem);
-    height: 35rem;
+    height: 45rem;
   }
 `;
 
@@ -40,6 +40,9 @@ const Button = styled.button`
   z-index: 1;
   ${(props) => (props.left ? "left: 0;" : "right: 0;")}
   ${(props) => (props.disabled ? "opacity: 0.5; cursor: not-allowed;" : "")}
+  @media (max-width: 620px) {
+    display: none;
+  }
 `;
 
 function Cards() {
